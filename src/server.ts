@@ -1,15 +1,10 @@
 import express from 'express';
+import { categoriesRoute } from './routes/categories.routes';
 
 const app = express();
-app.use(express.json());
-app.get('/', (req, res) => {
-  return res.json('funfonando');
-});
 
-app.post('/courses', (req, res) => {
-  const { name } = req.headers;
-  return res.json({ name });
-});
+app.use(express.json());
+app.use(categoriesRoute);
 app.listen(3333, () => {
   console.log('http://localhost:3333/');
 });

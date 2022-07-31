@@ -1,10 +1,10 @@
 import { Category } from '../models/Category';
+import {
+  ICategoriesRepository,
+  ICreatedCategoryDTO,
+} from '../repositories/ICategoriesRepository';
 
-interface ICreatedCategoryDTO {
-  nameCategory: string;
-  description: string;
-}
-export class CategoriesRepository {
+export class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
   constructor() {
     this.categories = [];

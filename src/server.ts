@@ -1,13 +1,11 @@
 import express from 'express';
 
-import { categoriesRoute } from './routes/categories.routes';
-import { specificationsRoute } from './routes/specifications.routes';
+import { router } from './routes/index';
 
 const app = express();
-
 app.use(express.json());
-app.use('/categories', categoriesRoute);
-app.use('/specifications', specificationsRoute);
+
+app.use(router);
 app.listen(3333, () => {
   console.log('http://localhost:3333/');
 });

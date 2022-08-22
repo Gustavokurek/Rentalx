@@ -8,17 +8,9 @@ import {
 
 export class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
-  // eslint-disable-next-line no-use-before-define
-  private static INSTANCE: CategoriesRepository;
-  private constructor() {
-    this.repository = getRepository(Category);
-  }
 
-  public static getInstance(): CategoriesRepository {
-    if (!CategoriesRepository.INSTANCE) {
-      CategoriesRepository.INSTANCE = new CategoriesRepository();
-    }
-    return CategoriesRepository.INSTANCE;
+  constructor() {
+    this.repository = getRepository(Category);
   }
 
   async create({

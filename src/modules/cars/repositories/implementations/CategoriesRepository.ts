@@ -1,3 +1,5 @@
+import { getRepository, Repository } from 'typeorm';
+
 import { Category } from '../../entities/Category';
 import {
   ICategoriesRepository,
@@ -5,11 +7,11 @@ import {
 } from '../ICategoriesRepository';
 
 export class CategoriesRepository implements ICategoriesRepository {
-  private categories: Category[];
+  private repository: Repository<Category>;
   // eslint-disable-next-line no-use-before-define
   private static INSTANCE: CategoriesRepository;
   private constructor() {
-    this.categories = [];
+    this.repository = getRepository(Category);
   }
 
   public static getInstance(): CategoriesRepository {
@@ -19,25 +21,24 @@ export class CategoriesRepository implements ICategoriesRepository {
     return CategoriesRepository.INSTANCE;
   }
 
-  create({ nameCategory, description }: ICreatedCategoryDTO) {
-    const category = new Category();
-    Object.assign(category, {
+  async create({
+    nameCategory,
+    description,
+  }: ICreatedCategoryDTO): Promise<void> {
+    const category = await this.repository.create({
       nameCategory,
       description,
-      created_at: new Date(),
     });
-    this.categories.push(category);
+    await this.repository.save(category);
   }
 
-  list(): Category[] {
-    const list = this.categories;
+  async list(): Promise<Category[]> {
+    const list = this.repository.find();
     return list;
   }
 
-  findByName(nameCategory: string): Category {
-    const category = this.categories.find(
-      (category) => category.nameCategory === nameCategory,
-    );
+  async findByName(nameCategory: string): Promise<Category> {
+    const category = this.repository.findOne({ nameCategory });
     return category;
   }
 }

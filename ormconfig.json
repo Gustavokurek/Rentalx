@@ -6,7 +6,7 @@
   "password": "GKignite",
   "database": "rentx",
   "migrations": ["./src/database/migrations/*.ts"],
-  "entities": ["**/src/modules/cars/entities/*{.ts,.js}"],
+  "entities": ["**/src/modules/*{cars,accounts}/entities/*{.ts,.js}"],
   "cli": {
     "migrationsDir": "./src/database/migrations"
   }

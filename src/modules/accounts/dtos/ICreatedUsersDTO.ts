@@ -1,4 +1,4 @@
-interface ICreatedUsersDTO {
+export interface ICreatedUsersDTO {
   name: string;
   username: string;
   email: string;

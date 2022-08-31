@@ -23,14 +23,14 @@ export async function ensureAuthenticated(
   try {
     const { sub: user_id } = verify(token, 'Daenerys') as IPayload;
     const userRepository = new UserRepository();
-    const user = userRepository.findById(user_id);
+    const user = await userRepository.findById(user_id);
 
     if (!user) {
       throw new Error('user does not exist');
     }
     console.log(user_id);
     next();
-  } catch {
-    throw new Error('Token invalid');
+  } catch (err) {
+    throw new Error(err);
   }
 }

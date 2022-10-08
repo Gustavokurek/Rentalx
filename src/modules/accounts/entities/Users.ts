@@ -14,6 +14,8 @@ export class Users {
   @Column()
   driver_license: string;
   @Column()
+  avatar: string;
+  @Column()
   admin: boolean;
   @CreateDateColumn()
   created_at: Date;

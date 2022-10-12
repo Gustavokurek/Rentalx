@@ -20,7 +20,7 @@ export class CreateCategoriesUseCase {
     );
 
     if (categoryAlreadyExists) {
-      throw new AppError('category already exists');
+      throw new AppError('category already exists', 400);
     }
 
     this.categoriesRepository.create({ nameCategory, description });

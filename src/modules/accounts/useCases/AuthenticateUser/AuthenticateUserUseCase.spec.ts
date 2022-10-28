@@ -1,5 +1,5 @@
-import { AppError } from '@errors/appError';
 import { UserRepositoryInMemory } from '@modules/accounts/repositories/in-memory/UsersRepositoryInMemory';
+import { AppError } from '@shared/errors/appError';
 
 import { CreateUserUseCase } from '../CreateUsers/createUserUseCase';
 import { AuthenticateUserUseCase } from './AuthenticateUserUseCase';

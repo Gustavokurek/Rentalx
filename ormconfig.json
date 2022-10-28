@@ -5,9 +5,9 @@
   "username": "gk",
   "password": "GKignite",
   "database": "rentx",
-  "migrations": ["./src/database/migrations/*.ts"],
-  "entities": ["**/src/modules/*{cars,accounts}/entities/*{.ts,.js}"],
+  "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
+  "entities": ["./src/modules/**/entities/*.ts"],
   "cli": {
-    "migrationsDir": "./src/database/migrations"
-  }
-}
+    "migrationsDir": "./src/shared/infra/typeorm/migrations"
+
+}}

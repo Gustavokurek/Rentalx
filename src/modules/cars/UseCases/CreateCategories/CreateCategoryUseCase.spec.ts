@@ -1,5 +1,6 @@
-import { AppError } from '../../../../errors/appError';
-import { CategoryRepositoryInMemory } from '../../repositories/in-memory/CategoryRepositoryInMemory';
+import { AppError } from '@errors/appError';
+import { CategoryRepositoryInMemory } from '@modules/cars/repositories/in-memory/CategoryRepositoryInMemory';
+
 import { CreateCategoriesUseCase } from './CreateCategoryUseCase';
 
 describe('Create a new Category', () => {

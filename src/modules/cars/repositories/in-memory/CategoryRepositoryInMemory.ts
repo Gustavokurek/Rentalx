@@ -1,7 +1,9 @@
-import { Category } from '../../infra/typeorm/entities/Category';
+import { Category } from '@modules/cars/infra/typeorm/entities/Category';
+
 import {
-    ICategoriesRepository,
-    ICreatedCategoryDTO
+  ICategoriesRepository,
+  // eslint-disable-next-line prettier/prettier
+  ICreatedCategoryDTO
 } from '../ICategoriesRepository';
 
 export class CategoryRepositoryInMemory implements ICategoriesRepository {

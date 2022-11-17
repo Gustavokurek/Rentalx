@@ -2,15 +2,18 @@
 
 **RF** => requisitos funcionais
 deve ser possível cadastrar um novo carro
+deve ser possível listar todas as categorias
 
 **RNF**=> requisitos não funcionais
 
 **RN** => regras ne negocio
 não deve ser possível cadastrar um carro com uma placa já existente
 
+não deve ser possível alterar a placa de um carro ja cadastrado
+
 carro deve ser cadastrado com disponibilidade por padrão
 
-- o usuário responsável pelo cadastro deve ser admin
+o usuário responsável pelo cadastro deve ser admin
 
 # Listagem de Carros
 

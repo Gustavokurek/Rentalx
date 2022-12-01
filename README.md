@@ -10,7 +10,7 @@ não deve ser possível cadastrar um carro com uma placa já existente
 
 carro deve ser cadastrado com disponibilidade por padrão
 
-- o usuário responsável pelo cadastro deve ser admin
+o usuário responsável pelo cadastro deve ser admin
 
 # Listagem de Carros
 

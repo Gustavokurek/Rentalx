@@ -11,6 +11,13 @@ export class CarsRepository implements ICarsRepository {
   constructor() {
     this.repository = getRepository(Car);
   }
+  findAvailable(
+    brand?: string,
+    category_id?: string,
+    name?: string,
+  ): Promise<Car[]> {
+    throw new Error('Method not implemented.');
+  }
   async create({
     brand,
     category_id,

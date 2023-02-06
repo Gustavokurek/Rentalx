@@ -11,7 +11,7 @@ const router = Router();
 router.use('/categories', categoriesRoute);
 router.use('/specifications', specificationsRoute);
 router.use('/users', usersRoute);
-router.use('/Cars', carsRoute);
+router.use('/cars', carsRoute);
 router.use(authenticateRoutes);
 
 export { router };

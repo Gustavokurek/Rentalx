@@ -22,15 +22,17 @@ export class createRentals1671055053681 implements MigrationInterface {
           {
             name: 'total',
             type: 'numeric',
+            isNullable: true
           },
           {
-            name: 'start_Date',
+            name: 'start_date',
             type: 'timestamp',
             default: 'now()',
           },
           {
-            name: 'and_Date',
+            name: 'end_date',
             type: 'timestamp',
+            isNullable:true
           },
           {
             name: 'expect_return_Date',
@@ -58,7 +60,7 @@ export class createRentals1671055053681 implements MigrationInterface {
             onUpdate: 'SET NULL ',
           },
           {
-            name: 'FKUserRentalty',
+            name: 'FKUserRental',
             referencedTableName: 'users',
             referencedColumnNames: ['id'],
             columnNames: ['user_id'],

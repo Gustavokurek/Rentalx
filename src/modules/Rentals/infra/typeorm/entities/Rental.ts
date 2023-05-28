@@ -1,0 +1,25 @@
+import { v4 as uuidv4 } from 'uuid';
+
+export class Rental {
+  id: string;
+
+  user_id: string;
+
+  car_id: string;
+
+  start_date: Date;
+
+  end_date: Date;
+
+  expect_return_Date: Date;
+
+  total: number;
+
+  created_at: Date;
+
+  updated_at: Date;
+
+  constructor() {
+    if (!this.id) this.id = uuidv4();
+  }
+}
